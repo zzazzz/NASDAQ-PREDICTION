@@ -2,14 +2,15 @@
 
 ## Domain Proyek
 
-Pada proyek ini, kami fokus pada **forecasting pergerakan indeks NASDAQ** menggunakan model machine learning. Tujuan utamanya adalah untuk memprediksi pergerakan harga indeks NASDAQ dengan mempertimbangkan variabel-variabel makroekonomi dan sentimen pasar yang mempengaruhinya. Dalam proyek ini, variabel yang digunakan meliputi **DXY Price (Dollar Index)**, **Fed Funds Rate**, dan **Sentimen berita** terkait dengan **Fed Rate**, serta **Volume** yang berhubungan dengan pergerakan harga indeks.
+Pada proyek ini, saya fokus pada **forecasting pergerakan indeks NASDAQ** menggunakan model machine learning. Tujuan utamanya adalah untuk memprediksi pergerakan harga indeks NASDAQ dengan mempertimbangkan variabel-variabel makroekonomi dan sentimen pasar yang mempengaruhinya. Dalam proyek ini, variabel yang digunakan meliputi **DXY Price (Dollar Index)**, **Fed Funds Rate**, dan **Sentimen berita** terkait dengan **Fed Rate**, serta **Volume** yang berhubungan dengan pergerakan harga indeks.
 
 **Rubrik/Kriteria Tambahan**:
 - Masalah yang diangkat adalah untuk menghubungkan faktor-faktor eksternal seperti suku bunga dan sentimen pasar dengan pergerakan harga NASDAQ, yang dapat membantu investor dalam pengambilan keputusan investasi.
 - Berdasarkan riset terkini, pasar saham seringkali dipengaruhi oleh kebijakan moneter yang tercermin dalam **Fed Funds Rate** serta fluktuasi **Dollar Index**, sementara sentimen pasar memegang peranan penting dalam pergerakan harga jangka pendek. 
+
 ## Business Understanding
 
-Pada bagian ini, kami mengklarifikasi permasalahan yang dihadapi dan tujuan dari proyek ini.
+Pada bagian ini, saya mengklarifikasi permasalahan yang dihadapi dan tujuan dari proyek ini.
 
 ### Problem Statements
 
@@ -26,7 +27,7 @@ Pada bagian ini, kami mengklarifikasi permasalahan yang dihadapi dan tujuan dari
 ### Solution Statements
 
 - Menggunakan **LSTM (Long Short-Term Memory)** untuk menangani data time series dan mengintegrasikan **sentimen berita** yang dilabelkan menggunakan **Gemma 2 9B Instruct**.
-- Melakukan pengujian dengan model lain seperti **ARIMA** untuk membandingkan hasil dan meningkatkan akurasi model.
+- Melakukan pengujian untuk membandingkan hasil model dan meningkatkan akurasi prediksi.
 
 ## Data Understanding
 
@@ -51,7 +52,7 @@ Pada tahap persiapan data, dilakukan beberapa langkah penting sebagai berikut:
 
 ## Modeling
 
-Model yang digunakan untuk prediksi adalah **LSTM (Long Short-Term Memory)**, yang efektif untuk data time series, serta **ARIMA** untuk dibandingkan hasilnya. LSTM dipilih karena kemampuannya untuk mengingat pola jangka panjang dalam data time series.
+Model yang digunakan untuk prediksi adalah **LSTM (Long Short-Term Memory)**, yang efektif untuk data time series.
 
 ### Tahapan Model:
 1. **Preprocessing**: Data dibagi menjadi set pelatihan dan pengujian, serta diubah menjadi format yang sesuai untuk input ke dalam model LSTM.
@@ -60,15 +61,14 @@ Model yang digunakan untuk prediksi adalah **LSTM (Long Short-Term Memory)**, ya
 
 ## Evaluation
 
-Metrik evaluasi yang digunakan untuk menilai kinerja model adalah **Mean Squared Error (MSE)**. MSE dipilih karena memberikan gambaran yang jelas mengenai seberapa besar kesalahan kuadrat antara nilai yang diprediksi dan nilai yang sebenarnya.
+Metrik evaluasi yang digunakan untuk menilai kinerja model adalah **Mean Squared Error (MSE)**, **Mean Absolute Error (MAE)**, dan **Root Mean Squared Error (RMSE)**. Metrik-metrik ini dipilih karena memberikan gambaran yang jelas mengenai seberapa besar kesalahan antara nilai yang diprediksi dan nilai yang sebenarnya.
 
-- **MSE (Mean Squared Error)**: Mengukur rata-rata kuadrat selisih antara nilai yang diprediksi dan nilai yang sebenarnya. Metrik ini sensitif terhadap outlier, sehingga model dengan **MSE** rendah dianggap lebih baik dalam memprediksi harga.
-
-- **MAE (Mean Absolute Error)**: Mengukur rata-rata perbedaan absolut antara nilai yang diprediksi dan nilai yang sebenarnya.
-
-Berdasarkan hasil model, nilai **MAE** dan **MSE** menunjukkan bahwa model LSTM memiliki performa yang lebih baik dibandingkan dengan ARIMA dalam hal prediksi harga NASDAQ.
+- **MSE (Mean Squared Error)**: Mengukur rata-rata kuadrat selisih antara nilai yang diprediksi dan nilai yang sebenarnya. MSE sensitif terhadap outlier, sehingga model dengan **MSE** rendah dianggap lebih baik dalam memprediksi harga.
+- **MAE (Mean Absolute Error)**: Mengukur rata-rata perbedaan absolut antara nilai yang diprediksi dan nilai yang sebenarnya. MAE memberikan gambaran seberapa besar rata-rata kesalahan absolut yang terjadi, yang lebih mudah dipahami dibandingkan MSE.
+- **RMSE (Root Mean Squared Error)**: Merupakan akar kuadrat dari MSE, yang memberikan gambaran lebih jelas mengenai besarnya kesalahan dalam unit yang sama dengan variabel yang diprediksi. RMSE memberikan bobot lebih pada kesalahan yang lebih besar.
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Penjelasan formula metrik evaluasi:
   - $MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|$
   - $MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$
+  - $RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}$
