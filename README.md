@@ -70,5 +70,7 @@ Metrik evaluasi yang digunakan untuk menilai kinerja model adalah **Mean Squared
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Penjelasan formula metrik evaluasi:
   - $MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|$
+
   - $MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$
+    
   - $RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}$
