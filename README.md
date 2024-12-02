@@ -72,5 +72,3 @@ Berdasarkan hasil model, nilai **MAE** dan **MSE** menunjukkan bahwa model LSTM 
 - Penjelasan formula metrik evaluasi:
   - $MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|$
   - $MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$
-
-**---Ini adalah bagian akhir laporan---**
