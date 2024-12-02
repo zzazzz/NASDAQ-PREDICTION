@@ -70,7 +70,11 @@ Berdasarkan hasil model, nilai **MAE** dan **MSE** menunjukkan bahwa model LSTM 
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Penjelasan formula metrik evaluasi:
-  - **MAE**: \( \text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i| \)
-  - **MSE**: \( \text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 \)
+  - **MAE**:   \[
+  \text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
+  \]
+  - **MSE**:   \[
+  \text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+  \]
 
 **---Ini adalah bagian akhir laporan---**
